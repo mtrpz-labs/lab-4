@@ -41,4 +41,26 @@ export function deleteTask(taskId) {
     );
     console.log(`Task with ID ${taskId} has been updated.`);
   }
+
+  export function showCompletedTasks(data) {
+    const completedTasks = data.filter((item) => item.isDone === true);
+    console.log(completedTasks);
+  }
   
+  export function showUnfinishedTasks(data) {
+    const unfinishedTasks = data.filter((item) => !item.isDone);
+    const urgentTasks = unfinishedTasks.sort((a, b) =>
+      moment(a.deadline, format).diff(moment(b.deadline, format))
+    );
+    console.log(urgentTasks);
+    return urgentTasks;
+  }
+  
+  export function getOverdueTasks(data) {
+    const today = moment().format(format);
+    const overdueTasks = data.filter((item) =>
+      moment(item.deadline, format).isBefore(moment(today, format), "day")
+    );
+    console.log(overdueTasks);
+    return overdueTasks;
+  }
