@@ -1,10 +1,10 @@
 import moment from "moment";
-import axios from "axios";
+import axios from "axios"
 
-const format = "DD.MM.YYYY";
+export const format = "DD.MM.YYYY";
 const apiUrl = "https://64648258043c103502bb3dc7.mockapi.io/tasks";
 
-const today = moment().format(format);
+export const today = moment().format(format);
 
 export async function addTask(title, description, time, deadline) {
   try {

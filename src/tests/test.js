@@ -8,7 +8,7 @@ import {
   showCompletedTasks,
   showUnfinishedTasks,
   getOverdueTasks,
-} from "../func";
+} from "../services/func.service.js";
 
 // Mock axios for testing
 jest.mock("axios");
