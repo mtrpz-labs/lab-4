@@ -2,9 +2,9 @@ name: Tests
 
 on:
   push:
-    branches: [feature-app-tests]
+    branches: [main]
   pull_request:
-    branches: [feature-app-tests]
+    branches: [main]
 
 jobs:
   build:
